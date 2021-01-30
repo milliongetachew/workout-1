@@ -1,66 +1,8 @@
 
 
-// try it more from visual studio code
-look it up 
 
 
-//  adding more before push 
-edit file which is on commit still ready to push
-
-
-//creating schema (XSD) for the XMl 
-//Given the following requirement 
-<name>
-<firstname>Ted</firstname> -- the data has to be string
-<lastname>Bear</lastname> -- the data has to be string
-<age>20</age> -- the data has to be integer between 0-60
-<address>
-	<street>test</street>  -- the data has to be string
-	<city>test</city>	-- the data has to be string
-	<state>MN</state>  -- the data has to be string and capital two characheter
-	<zip>1234</zip>  -- the data has to be integer, 5 digit, all digits start with 1-9
-</address>
-</name>
-
-//Solution was done as follows
-
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
-   <xs:element name="name">
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element type="xs:string" name="firstname" />
-            <xs:element type="xs:string" name="lastname" />
-            <xs:element name="age">
-               <xs:simpleType>
-                  <xs:restriction base="xs:integer">
-                     <xs:minInclusive value="0" />
-                     <xs:maxInclusive value="60" />
-                  </xs:restriction>
-               </xs:simpleType>
-            </xs:element> 
-           <xs:element name="address">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element type="xs:string" name="street"/>
-              <xs:element type="xs:string" name="city"/>
-              <xs:element name="state">
-               <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                     <xs:pattern value="[A-Z][A-Z]" />
-                  </xs:restriction>
-               </xs:simpleType>
-            </xs:element>
-              <xs:element name="zip">
-              <xs:simpleType>
-                  <xs:restriction base="xs:integer">
-                    <xs:pattern value="[1-9][1-9][1-9][1-9][1-9]" />
-                  </xs:restriction>
-               </xs:simpleType>
-             </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
+Push through terminal
+git add .
+git commit -m "add existing file"
+git push
