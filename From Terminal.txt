@@ -34,7 +34,7 @@ Authenticate through SSH once and GitLab won’t ask your credentials every time
             git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
 //to remote repos.
             git push
-//to pull up-to-date copy of the project 
+//to pull up-to-date copy of the project to local
             git pull <REMOTE> <name-of-branch>
 //To create a new feature branch and work from without affecting the master branch:
 //Note that Git does not accept empty spaces
