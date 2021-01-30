@@ -1,8 +1,56 @@
 
+//Through terminal
+
+In your shell, add your user name:
+
+            git config --global user.name "your_username"
+
+And your email address:
+
+            git config --global user.email "your_email_address@example.com"
+
+To check the configuration, run:
+
+            git config --global --lis
 
 
+//Git authentication methods (further reading required)
+To connect your computer with GitLab, you need to add your credentials to identify yourself. You have two options:
+Authenticate on a project-by-project basis through HTTPS, and enter your credentials every time you perform an operation between your computer and GitLab.
+Authenticate through SSH once and GitLab won’t ask your credentials every time you pull, push, and clone.
 
-Push through terminal
-git add .
-git commit -m "add existing file"
-git push
+
+//to clone repo
+            git clone https://github.com/craftcommon/workout
+
+//To add and commit (save) all local changes quickly:
+            git add .
+            git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+//You’ll see any local changes in red when you type git status. 
+//These changes may be new, modified, or deleted files/folders. 
+//Use git add to first stage (prepare) a local file/folder for committing. 
+//Then use git commit to commit (save) the staged files:
+            git add <file-name OR folder-name>
+            git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+//to remote repos.
+            git push
+//to pull up-to-date copy of the project 
+            git pull <REMOTE> <name-of-branch>
+//To create a new feature branch and work from without affecting the master branch:
+//Note that Git does not accept empty spaces
+            git checkout -b <name-of-branch>
+//switching to Master branch
+            git checkout master
+
+//To switch to an existing branch, so you can work on it:
+            git checkout <name-of-branch>
+//Status
+            git status
+//Differnce
+            git diff
+//To add a remote repository to your local copy:
+    In GitLab, create a new project to hold your files.
+    Visit this project’s homepage, scroll down to Push an existing folder, and copy the command that starts with git remote add.
+    On your computer, open the terminal in the directory you’ve initialized, paste the command you copied, and press enter:
+
+            git remote add origin https://github.com:username/projectpath.git
