@@ -1,0 +1,21 @@
+#%RAML 1.0 AnnotationTypeDeclaration
+properties:
+  usage:
+    description: to undersand the detail about the API
+    default: get
+  controller:
+    properties:
+      protocol:
+        description: the API used https
+        default: https
+      url:
+        description: icraftsoft.net/shopping is the url for the rest api
+        default: href
+      Methodusage?: 
+         description: can the user use all http methods
+         type: boolean
+         default: false  
+      AdminMethodusage?: 
+         description: can the admin use all http methods
+         type: boolean
+         default: true               

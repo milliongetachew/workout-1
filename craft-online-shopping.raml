@@ -1,0 +1,88 @@
+#%RAML 1.0
+title: Craft-Online-Shopping
+version: 1.0
+uses:
+  library: library.raml
+documentation:
+  - !include documentation.raml  
+
+
+/Products:
+  type:
+    library.collections:
+      type: ProductDataType []
+      examplerefrance1:
+          !include Examples/Products.raml
+  is:
+   library.404notfound
+  /{productid}:
+    type:
+      library.collections:
+        type: ProductDataType
+        examplerefrance1:
+          !include Examples/Product.raml
+    
+    is:
+     library.404notfound  
+
+
+                           
+/Users:
+  post: 
+   body:
+    application/json:
+      type: library.useriddatatype
+   responses: 
+    200:
+      body:
+       application/json:
+         type: library.userresponse
+         examples: !include Examples/userresponseexample.raml
+   is:
+      - library.404notfound 
+  type:
+    library.collections:
+      type: useriddatatype
+      examplerefrance1: !include Examples/user.raml
+    is:
+     - library.404notfound           
+              
+      
+/Orders:
+  post:
+    body:
+      application/json:
+        type: library.orderpost []
+        example: !include Examples/orderpostexample.raml
+          
+    responses:
+      200:
+        body:
+          application/json:
+            type: library.orderpresponse
+            examples: !include Examples/orderpostresponseexample.raml
+    
+  type:
+    library.collections:
+      examplerefrance1:
+         !include Examples/Orders.raml
+  is:
+     library.404notfound 
+  /{orderid}:
+   type:
+    library.collections:
+      examplerefrance1:
+                !include Examples/Order.raml
+    is:
+       library.404notfound
+     
+/Catagories:
+ type:
+    library.collections:
+      examplerefrance1:
+              !include Examples/catagories.raml
+    is:
+      library.404notfound
+
+            
+
