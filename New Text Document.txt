@@ -1,0 +1,51 @@
+package com.icraft3;
+
+public class Account {
+	
+	private String accname;
+	private int accnumber;
+	private String email;
+	private double deposute;
+	private double balance;
+	public String getAccname() {
+		return accname;
+	}
+	public void setAccname(String accname) {
+		this.accname = accname;
+	}
+	public int getAccnumber() {
+		return accnumber;
+	}
+	public void setAccnumber(int accnumber) {
+		this.accnumber = accnumber;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public double getDeposute() {
+		return deposute;
+	}
+	public void setDeposute(double deposute) {
+		this.deposute = deposute;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance+balance;
+	}
+	
+	public static void main(String[]args) {
+	
+	
+	 Account acc = new Account();
+	 
+	acc.setAccname("kedir");
+	acc.setAccnumber(12345);
+	acc.setEmail("asvdbdn@gmail.com");
+	acc.setDeposute(12435);
+	acc.setBalance(123);
+	
